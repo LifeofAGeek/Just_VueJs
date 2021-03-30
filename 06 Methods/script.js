@@ -1,8 +1,7 @@
-console.log("i'm working");
-
 const App = {
     data(){
         return{
+            cart : [],
             courseList : [{
                 id: "lco1",
                 courseName: "Django Full stack",
@@ -27,11 +26,15 @@ const App = {
             }]
         }
     },
-    methods: {
-
-    },
     computed: {
-        
+        finalCartValue(){
+           return this.cart.reduce((accumulator, course) => (course.price + course.price*0.18) + accumulator,0)
+        }
+    },
+    methods: {
+        addToCart(course){
+            this.cart.push(course)
+        }
     }
 }
 Vue.createApp(App).mount('#cards')
