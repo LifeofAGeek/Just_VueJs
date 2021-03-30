@@ -8,9 +8,35 @@
     <script src="https://unpkg.com/vue@next"></script>
     <title>My Vue App</title>
 </head>
-<body class="bg-dark" id="vapp">
+<body id="vapp">
     <div class="container mt-4">
-        
+        <h2 class="display-3">Super Heros</h2>
+        <select v-model="heroSelect" class="form-select">
+            <option selected value="">Choose single Superhero</option>
+            <option>Iron Man</option>
+            <option>Thor</option>
+            <option>Ant Man</option>
+            <option>Caption America</option>
+            <option>Vision</option>
+        </select>
+        <h2 class="btn bg-warning mt-3">Calling {{heroSelect}}</h2>
+        <hr>
+        <h2 class="display-3">Avenger Team</h2>
+        <select v-model="avengerSelect" multiple class="form-select">
+            <option value="Tony Stark">Iron Man</option>
+            <option value="Chris Hames.">Thor</option>
+            <option value="Paul">Ant Man</option>
+            <option value="Chris Evans">Caption America</option>
+            <option value="Peter">Vision</option>
+        </select>
+        <h2 class="btn bg-warning mt-3">Calling Avenger Team {{avengerSelect}}</h2>
+
+        <hr>
+        <h2 class="display-3">My Avenger's</h2>
+        <select v-model="myDyanamic" class="form-select">
+            <option v-for="option in myBonds" :value="option.value">{{option.text}}</option>
+        </select>
+        <h2 class="btn bg-warning mt-3">Calling My Avenger's {{myDyanamic}}</h2>
     </div>
 </body>
 <script src="./script.js"></script>
