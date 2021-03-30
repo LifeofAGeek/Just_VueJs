@@ -1,7 +1,7 @@
 const App = {
     data(){
         return {
-            isLogout: false,
+            isLogout: true,
             flag: true
         }
     }
