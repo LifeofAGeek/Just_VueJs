@@ -15,9 +15,7 @@
                <div class="mx-auto badge bg-success p-2 rounded-bottom">
                 <h1 class="display-5 text-white">Your Cart Value is Rs. {{finalCartValue}}</h1> 
                </div>
-                <div v-for="course in courseList"
-                :key= "course.id"
-                id="card" class="bg-light mt-3" style="width: 18rem;">
+                <div v-for="course in courseList" :key= "course.id" id="card" class="bg-light mt-3" style="width: 18rem;">
                     <img :src="course.courseImage" class="card-img-top" alt="courses image">
                     <div class="card-body">
                     <h5 class="card-title">{{course.courseName}}</h5>
